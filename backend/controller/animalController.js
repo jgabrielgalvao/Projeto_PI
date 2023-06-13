@@ -22,7 +22,7 @@ function getAnimalsFilter(req, res) {
 const getAnimalPictureById = async (req, res) => {
     let parsedId = parseInt(req.params.id);
     let animalPicture = await animalService.getAnimalPictureById(parsedId);
-    const filePath = path.join('/home/josegabriel/Área de Trabalho/ProjetoPI-main-master-master/backend/pictures', `${animalPicture}`);
+    const filePath = path.join('/home/josegabriel/Área de Trabalho/Projeto_PI/backend/pictures', `${animalPicture}`);
     res.sendFile(filePath);
     // animalPicture.then((result) => res.json(result));
 }

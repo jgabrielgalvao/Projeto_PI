@@ -1,0 +1,34 @@
+insert into
+    animals (
+        name,
+        breed,
+        gender,
+        age,
+        size,
+        city,
+        state,
+        dewormed,
+        castrated,
+        vaccinated,
+        special_care,
+        picture,
+        createdAt,
+        updatedAt
+    )
+values
+    (
+        'Jose',
+        'Caramelo',
+        'M',
+        2,
+        'Grande',
+        'Franca',
+        'SP',
+        'Sim',
+        'Sim',
+        'Sim',
+        0,
+        'https://extra.globo.com/incoming/24557430-35c-95e/w448/nota.png',
+        now(),
+        now()
+    );

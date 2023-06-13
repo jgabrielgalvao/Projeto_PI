@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+
+<html lang="pt-br">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Me Leva Pra Casa? - Encontre Um Pet Para Adotar</title>
+  <link rel="stylesheet" type="text/css" href="../style/style.css" />
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+  <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+</head>
+
+<body>
+  <nav>
+    <div id="logo"><img id="imgsize" src="../images/logo_escrito.png" /></div>
+    <label for="drop" class="toggle"><img src="../images/pegada2.png">&nbsp&nbspMENU</label>
+    <input type="checkbox" id="drop" />
+    <ul class="menu">
+      <li><a href="../pags/index.html">Home</a></li>
+      <li><a href="../pags/sobre.html">Quem Somos</a></li>
+      <li><a href="../pags/busca.html">Quero Um Amigo</a></li>
+      <li><a href="../pags/filtroanimais.html">Filtro</a></li>
+      <li><a class="active" href="../pags/cadastro.html">Cadastro de Pet</a></li>
+      <li><a href="../pags/contato.html">Contato</a></li>
+    </ul>
+  </nav>
+  <div class="wrapper" id="App">
+    <div class="header">CADASTRO
+      <br>
+    </div>
+    <div class="main">
+      <div class="box sidebar"><img class="img-responsive" src="../images/dogif.gif" /></div>
+      <div class="box content">
+        <!--INFORMAÇÕES PARA CADASTRO, NOME, SEXO, IDADE, RAÇA-->
+        <h2><strong>CADASTRE UM AMIGO PARA ADOÇÃO</strong></h2>
+        <br><br>
+        <div class="cadpet">
+          <form @submit.prevent="cadastro" enctype="multipart/form-data">
+            <div class="form-row">
+              <div class="col">
+                <p> <input type="text" class="form-control" placeholder="Nome do Pet" v-model="nome_animal"></p>
+              </div>
+
+              <div class="form-row">
+                <div class="col">
+                  <div v-for="opcao in opcoes_e" :key="opcao.id" class="checkbox-inline">
+                    <label>
+                      <input type="checkbox" :checked="opcao.selecionado" @change="opcao.selecionado = !opcao.selecionado">
+                      {{ opcao.label }}
+                    </label>
+                  </div>
+                </div>
+
+                <div class="col">
+                  <div v-for="opcao in opcoes_s" :key="opcao.id" class="checkbox-inline">
+                    <label>
+                      <input type="checkbox" :checked="opcao.selecionado" @change="opcao.selecionado = !opcao.selecionado">
+                      {{ opcao.label }}
+                    </label>
+                  </div>
+                </div>
+              </div>
+
+              <div v-for="opcao in opcoes_i" :key="opcao.id" class="checkbox-inline">
+                <label>
+                  <input type="checkbox" :checked="opcao.selecionado" @change="opcao.selecionado = !opcao.selecionado">
+                  {{ opcao.label }}
+                </label>
+              </div>
+              <br>
+              <div v-for="opcao in opcoes_p" :key="opcao.id" class="checkbox-inline">
+                <label>
+                  <input type="checkbox" :checked="opcao.selecionado" @change="opcao.selecionado = !opcao.selecionado">
+                  {{ opcao.label }}
+                </label>
+              </div>
+
+
+              <div class="form-row">
+                <div class="col">
+                  <input type="text" class="form-control" placeholder="Cidade" v-model="cidade_animal">
+                </div>
+                <div class="col">
+                  <input type="text" class="form-control" placeholder="Estado" v-model="estado_animal">
+                </div>
+              </div>
+
+              <h3>Outras Informações</h3>
+              <div v-for="opcao in opcoes" :key="opcao.id" class="checkbox-inline">
+                <label>
+                  <input type="checkbox" :checked="opcao.selecionado" @change="opcao.selecionado = !opcao.selecionado">
+                  {{ opcao.label }}
+                </label>
+              </div>
+              <br><br>
+
+              <div class="custom-file">
+                <input type="file" name="picture" ref="fileInput" @change="handleFileChange">
+              </div>
+              <button type="submit" class="btn btn-default" @click="mostrar()">Cadastrar</button>
+            </div>
+          </form>
+        </div>
+        <br>
+      </div>
+      <div class="box sidebar"><img class="img-responsive" src="../images/dogif.gif" /></div>
+    </div>
+    <div class="rodape">
+      <img src="../images/instagram.png">
+      <img src="../images/facebook.png">
+      <img src="../images/mail.png">
+      <img src="../images/whatsapp.png">
+      <strong>(16) 3771-2233</strong>
+    </div>
+  </div>
+  <script src="/frontend/script/cad_vue.js"></script>
+
+</body>
+
+</html>

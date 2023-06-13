@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Me Leva Pra Casa? - Encontre Um Pet Para Adotar</title>
+    <link rel="stylesheet" type="text/css" href="/frontend/style/style.css" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+</head>
+
+<body>
+
+ 
+
+<nav>
+  <div id="logo"><img id="imgsize" src="/frontend/images/logo_escrito.png" /></div>
+
+  <label for="drop" class="toggle"><img src="/frontend/images/pegada2.png">&nbsp&nbspMENU</label>
+  <input type="checkbox" id="drop" />
+      <ul class="menu">
+          <li><a href="/frontend/pags/index.html">Home</a></li>
+          <li><a href="/frontend/pags/sobre.html">Quem Somos</a></li>
+          <li><a href="/frontend/pags/busca.html">Quero Um Amigo</a></li>
+          <li><a href="/frontend/pags/filtroanimais.html">Filtro</a></li>
+          <li><a href="/frontend/pags/cadastro.html">Cadastro de Pet</a></li>
+          <li><a class="active" href="/frontend/pags/contato.html">Contato</a></li>
+      </ul>
+  </nav>
+
+
+
+<div class="wrapper">
+  <div class="header">CONTATO
+
+    <br>
+  </div>
+  <div class="main">
+    <div class="box sidebar"><img class="img-responsive" src="/frontend/images/dogif.gif" /></div>
+    <div class="box content"> 
+      <div>
+        Você pode falar conosco pelos canais de atendimento abaixo, por nosso atendimento online clicando no ícone do WhatsApp no canto inferior direito, ou se preferir preenchendo o formulário abaixo, que lhe responderemos em até 2 dias úteis.
+        <br><br>
+      </div>
+      
+      <form action="https://formspree.io/f/xrgvwnvr"
+          onsubmit="return obrigadoContato()"    method="POST" target="_blank">
+
+
+          <br>
+          <div class="form-group">
+            <label for="nome">Nome:</label>
+            <input type="text" name="nome" id="nome" class="form-control">
+        </div>
+        <div class="form-group">
+          <label for="_replyto">Email:</label>
+          <input type="email" id="_replyto" name="email" class="form-control">
+        </div>
+        <div class="form-group">
+          <label for="_subject">Selecione o Assunto Desejado:</label>
+          <select type="text" class="form-control" name="assunto" id="_subject">
+            <option>Dúvida</option>
+            <option>Solicitação</option>
+            <option>Reclamação</option>
+            <option>Outros Assuntos</option>
+          </select>
+      </div>
+      <div class="form-group">
+        <label for="mensagem">Mensagem:</label>
+        <textarea name="mensagem" id="mensagem" cols="30" rows="10" class="form-control"></textarea>
+    </div>
+    <div class="form-group">
+        <button type="submit" class="btn btn-default" >Enviar</button>
+    </div>
+      </form>
+      <script>
+        function obrigadoContato(){
+                alert("Recebemos sua mensagem! Em breve você receberá nosso contato! Um aubraço");
+              }
+        
+    </script>
+      </div>
+    
+      
+    
+    </div>
+    <div class="box sidebar"><img class="img-responsive" src="/frontend/images/dogif.gif" /></div>
+  </div>
+  <div class="rodape"><img src="/frontend/images/instagram.png"><img src="/frontend/images/facebook.png"><img src="/frontend/images/mail.png"><img src="/frontend/images/whatsapp.png"><strong>(16) 3771-2233</strong></div>
+</div>
+
+
+
+</body>
+</html>

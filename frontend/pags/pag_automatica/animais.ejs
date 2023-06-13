@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Animal: <%= animal.nome %></title>
+  <link rel="stylesheet" href="styles.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+  <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+</head>
+<body>
+  <div id="app">
+    <h1><%= animal.nome %></h1>
+    <img src="<%= animal.imagem %>">
+    <p><%= animal.cidade %></p>
+  </div>
+  <script src="/frontend/script/pag_auto.js"></script>
+</body>
+</html>

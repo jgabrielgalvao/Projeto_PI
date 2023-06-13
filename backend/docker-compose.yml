@@ -1,0 +1,12 @@
+version: '3.8'
+
+services:
+ mysql:
+  image: 'mysql:debian'
+  environment:
+   - MYSQL_ROOT_PASSWORD=fatec123*
+   - MYSQL_PASSWORD=fatec123*
+   - MYSQL_DATABASE=Animais
+
+  ports:
+   - 3306:3306    

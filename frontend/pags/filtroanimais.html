@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+
+<html lang="pt-br">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Me Leva Pra Casa? - Encontre Um Pet Para Adotar</title>
+  <link rel="stylesheet" type="text/css" href="../style/style.css" />
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+  <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+</head>
+
+<body>
+  <nav>
+    <div id="logo"><img id="imgsize" src="../images/logo_escrito.png" /></div>
+    <label for="drop" class="toggle"><img src="../images/pegada2.png">&nbsp&nbspMENU</label>
+    <input type="checkbox" id="drop" />
+    <ul class="menu">
+      <li><a href="../pags/index.html">Home</a></li>
+      <li><a href="../pags/sobre.html">Quem Somos</a></li>
+      <li><a href="../pags/busca.html">Quero Um Amigo</a></li>
+      <li><a class="active" href="../pags/filtroanimais.html">Filtro</a></li>
+      <li><a href="../pags/cadastro.html">Cadastro de Pet</a></li>
+      <li><a href="../pags/contato.html">Contato</a></li>
+    </ul>
+  </nav>
+  <div class="wrapper" id="App">
+    <div class="header">CADASTRO
+      <br>
+    </div>
+    <div class="main">
+      <div class="box sidebar"><img class="img-responsive" src="../images/dogif.gif" /></div>
+      <div class="box content">
+        <!--INFORMAÇÕES PARA CADASTRO, NOME, SEXO, IDADE, RAÇA-->
+        <h2><strong>ESCOLHA UM AMIGO</strong></h2>
+        <br><br>
+        <div class="cadpet">
+            <div class="form-row">
+              <div class="form-row">
+                <div class="col">
+                <label for="especie_lbl">Espécie:</label>
+                  <div v-for="opcao in opcoes_e" :key="opcao.id" class="checkbox-inline">
+                    <label>
+                      <input type="checkbox" :checked="opcao.selecionado" @change="opcao.selecionado = !opcao.selecionado">
+                      {{ opcao.label }}
+                    </label>
+                  </div>
+                </div>
+                <div class="col">
+                    <label for="sexo_lbl">Sexo:</label>
+                    <div v-for="opcao in opcoes_s" :key="opcao.id" class="checkbox-inline">
+                      <label>
+                        <input type="checkbox" :checked="opcao.selecionado" @change="opcao.selecionado = !opcao.selecionado">
+                        {{ opcao.label }}
+                      </label>
+                    </div>
+                </div>
+                <div class="col">
+                    <label for="idade_lbl">Idade:</label>
+                    <div v-for="opcao in opcoes_i" :key="opcao.id" class="checkbox-inline">
+                      <label>
+                        <input type="checkbox" :checked="opcao.selecionado" @change="opcao.selecionado = !opcao.selecionado">
+                        {{ opcao.label }}
+                      </label>
+                    </div>
+                </div>
+              <button type="submit" class="btn btn-default" @click="mostrar()">Filtrar</button>
+            <br>
+              <div>
+                <div v-for="(animal, index) in animais" :key="index" class="animal_filtrado">
+                    <img class="max-w-xs inline-block" id="img_animais"
+                        :src="'http://localhost:8081/picture/'+ (animal.id)" />
+                    <div class="informacoes_filtro">
+                        <h1>{{animal.name}}</h1>
+                        <p>Cidade: <span class="span">{{animal.city}}</span></p>
+                        <p>Espécie: <span class="span">{{animal.breed}}</span></p>
+                        <p>Gênero: <span class="span">{{animal.gender}}</span></p>    
+                        <p>Idade: <span class="span">{{animal.age}}</span></p>
+                        <p>Porte: <span class="span">{{animal.size}}</span></p>
+                    </div>
+                </div>
+            </div>
+            </div>
+        </div>
+      </div>
+      <br>
+      <div class="box sidebar"><img class="img-responsive" src="../images/dogif.gif" /></div>
+    </div>
+    <div class="rodape">
+      <img src="../images/instagram.png">
+      <img src="../images/facebook.png">
+      <img src="../images/mail.png">
+      <img src="../images/whatsapp.png">
+      <strong>(16) 3771-2233</strong>
+    </div>
+  </div>
+  <script src="/frontend/script/filtro_vue.js"></script>
+
+</body>
+
+</html>
